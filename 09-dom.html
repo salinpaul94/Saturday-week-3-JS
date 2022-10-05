@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with the DOM</title>
+</head>
+<body>
+    <p id="para-1" class="para">
+        I am a para
+    </p>
+
+    <p id="para-2" class="para">
+        I am a para 2
+    </p>
+
+    <script>
+        // DOM - Document Object Model (a tree of objects called Nodes)
+        // querySelector() gets the first element that matches
+        const p =  document.querySelector( 'p' );
+        console.log( p );
+        //console.dir( para1 );
+
+        
+
+        const class1 = document.querySelector( '.class' );
+        console.log( class1 );
+
+        // a list of objects ( a list of DOM nodes )
+        const paragraphs = document.querySelectorAll( '.para');
+        console.dir( paragraphs );
+
+        setTimeout(
+            function() {
+                p.textContent = 'I am new text for para1';
+            },
+            5000 // 5000 ms -> 5 seconds
+        )
+
+        const id =document.querySelector( '#para-2' );
+        console.log( id );
+        
+        // Hey Browser! when para 2 is clicked call the function
+        id.addEventListener( 'click', function() {
+            console.log( 'function executed');
+        });
+        
+    </script>
+</body>
+</html>
